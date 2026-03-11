@@ -1,0 +1,203 @@
+:root {
+    --primary: #4a90e2;
+    --dark: #333;
+    --light: #f4f4f4;
+    --border: #ddd;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #eef1f5;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: var(--dark);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background: #357abd;
+}
+
+.main-container {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* Sidebar Controls */
+.controls {
+    width: 300px;
+    background: white;
+    border-right: 1px solid var(--border);
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.controls h3 {
+    margin-bottom: 20px;
+    color: var(--dark);
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 5px;
+}
+
+.control-group {
+    margin-bottom: 20px;
+}
+
+.control-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+input[type="color"] {
+    width: 100%;
+    height: 40px;
+    border: 1px solid var(--border);
+    cursor: pointer;
+}
+
+input[type="range"] {
+    width: 100%;
+    cursor: pointer;
+}
+
+.btn-group {
+    display: flex;
+    gap: 5px;
+}
+
+.btn-group button {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid var(--border);
+    background: #f9f9f9;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.btn-group button:hover {
+    background: #e2e2e2;
+}
+
+/* Workspace */
+.workspace {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+}
+
+.editor-box, .preview-box {
+    flex: 1;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.label {
+    background: #f0f0f0;
+    padding: 8px 15px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #666;
+    border-bottom: 1px solid var(--border);
+}
+
+textarea#html-input {
+    flex: 1;
+    border: none;
+    padding: 15px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    resize: none;
+    outline: none;
+    background: #282c34;
+    color: #abb2bf;
+}
+
+#preview-screen {
+    flex: 1;
+    padding: 20px;
+    overflow: auto;
+    transition: all 0.3s ease;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 500px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+#css-output {
+    width: 100%;
+    height: 150px;
+    margin: 15px 0;
+    padding: 10px;
+    background: #f4f4f4;
+    border: 1px solid var(--border);
+}
+
+#copy-btn {
+    width: 100%;
+    padding: 10px;
+    background: var(--dark);
+    color: white;
+    border: none;
+    cursor: pointer;
+}

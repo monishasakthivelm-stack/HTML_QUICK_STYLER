@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Quick Styler</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <h1><i class="fas fa-paint-brush"></i> HTML Quick Styler</h1>
+        <button id="get-css-btn" class="btn-primary">Get CSS Code</button>
+    </header>
+
+    <div class="main-container">
+        <!-- Sidebar Controls -->
+        <aside class="controls">
+            <h3>Style Controls</h3>
+            
+            <div class="control-group">
+                <label>Text Color</label>
+                <input type="color" id="color-picker" value="#000000">
+            </div>
+
+            <div class="control-group">
+                <label>Background Color</label>
+                <input type="color" id="bg-color-picker" value="#ffffff">
+            </div>
+
+            <div class="control-group">
+                <label>Font Size (<span id="fs-val">16</span>px)</label>
+                <input type="range" id="font-size" min="10" max="100" value="16">
+            </div>
+
+            <div class="control-group">
+                <label>Padding (<span id="pd-val">10</span>px)</label>
+                <input type="range" id="padding" min="0" max="100" value="10">
+            </div>
+
+            <div class="control-group">
+                <label>Border Radius (<span id="br-val">0</span>px)</label>
+                <input type="range" id="border-radius" min="0" max="50" value="0">
+            </div>
+
+            <div class="control-group">
+                <label>Text Align</label>
+                <div class="btn-group">
+                    <button data-style="textAlign" data-value="left"><i class="fas fa-align-left"></i></button>
+                    <button data-style="textAlign" data-value="center"><i class="fas fa-align-center"></i></button>
+                    <button data-style="textAlign" data-value="right"><i class="fas fa-align-right"></i></button>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label>Font Style</label>
+                <div class="btn-group">
+                    <button id="bold-btn"><i class="fas fa-bold"></i></button>
+                    <button id="italic-btn"><i class="fas fa-italic"></i></button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Editor and Preview Area -->
+        <section class="workspace">
+            <div class="editor-box">
+                <div class="label">HTML Input</div>
+                <textarea id="html-input" placeholder="Type your HTML here..."><h1>Hello World</h1>
+<p>This is a quick styler demo.</p>
+<button>Click Me</button></textarea>
+            </div>
+
+            <div class="preview-box">
+                <div class="label">Live Preview</div>
+                <div id="preview-screen">
+                    <!-- Content renders here -->
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal for CSS Output -->
+    <div id="css-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Generated CSS</h2>
+            <textarea id="css-output" readonly></textarea>
+            <button id="copy-btn">Copy to Clipboard</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
